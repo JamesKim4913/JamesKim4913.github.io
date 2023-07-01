@@ -86,6 +86,14 @@ $(document).ready(function(){
           type: "POST",
           data: formData,
           success: function(response) {
+            // Message sent successfully
+            alert("Message sent!");
+            // Clear the form fields
+            $("#contact-form")[0].reset();            
+          }
+
+          /* // origin source
+          success: function(response) {            
             // Handle the response from the server
             if (response.success) {
               // Message sent successfully
@@ -94,13 +102,14 @@ $(document).ready(function(){
               $("#contact-form")[0].reset();
             } else {
               // Error occurred while sending the message
-              // alert("Error: " + response.message);
-            }
+              alert("Error: " + response.message);
+            }            
           },
           error: function() {
             // Error occurred during the Ajax request
-            // alert("Error: Unable to send the message.");
+            alert("Error: Unable to send the message.");
           }
+          */
           
         });
     });
